@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- CSS file -->
+ <title> COVID-19 Multiple Visualisations</title>
+ <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <!-- layout  -->
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+
+
+</head>
+<body>
+<h1 id="idselect"> COVID-19 relative factors comparison</h1>
+<p>We know that the disease is caused by the SARS-CoV-2 virus, which spreads between people in several different ways.</p>
+
+<p><span class="cases_text">The virus can spread from an infected person’s mouth or nose in small liquid particles when they cough, sneeze, speak, sing or breathe. These particles range from larger respiratory droplets to smaller aerosols.</span>
+</p>
+
+<p> Current evidence suggests that the virus spreads mainly between people who are in close contact with each other, typically within 1 meter (short-range). A person can be infected when aerosols or droplets containing the virus are inhaled or come directly into contact with the eyes, nose, or mouth.
+    The virus can also spread in poorly ventilated and/or crowded indoor settings, where people tend to spend longer periods of time. This is because aerosols remain suspended in the air or travel farther than 1 meter (long-range).
+    People may also become infected by touching surfaces that have been contaminated by the virus when touching their eyes, nose or mouth without cleaning their hands.
+    </p>
+
+ <!-- image  file -->
+    <div id="idselect2">
+        <img src="image/image2.jpg">
+    </div>
+
+ <!-- vege json files-->
+  <div class="center">
+      <div class="pure-u-1-3">
+      <h2>Dot map of medical doctors per 1000people</h2>
+      <p>All over the world, doctors, nurses, EMTs and other medical personnel are working around the clock to treat patients and slow the COVID-19 pandemic, with many contracting the virus themselves. As the global situation deteriorates and the burden on medical staff increases, which countries have the highest number of doctors per inhabitant?</p>
+       <p> According to the most recent OECD data, Italy has 4 doctors per 1,000 of its population while Spain has 3.9. In the United States, there are fewer doctors at 2.9 per 1,000 inhabitants. In China, which has just reported a lack of new domestic COVID-19 infections for the first time since the outbreak occurred, there are 2 doctors per 1,000 people.</p>
+      </div>
+<div id="vis3"  class="vis-container"></div>
+
+
+<div id="vis1"  class="vis-container"></div>
+<div id="vis2"  class="vis-container"></div>
+
+
+     <div class="pure-u-1-3">
+    <h2>Choropleth maps of COVID-19 Hospital beds per 1000 people</h2>
+    <p>Currently, the organization stated that the 25 services surveyed in the survey have a single business of 50%, which attracts the most serious areas. Medical care. The service leasing rate for sufficiently generous medical outreach is 7%, the internal service organization 0% and the graduation rate 61%), Non-female diagnosis and treatment (69%), family planning and diagnosis (68%), mental health problem treatment (61%), and cancer diagnosis and treatment (55%).</p>
+    <p>Other areas that are more frequently affected include malaria diagnosis and treatment (46%), tuberculosis detection and treatment (42%), and antiretroviral therapy (32%).</p>
+    <p>The survey shows that lack of supplies and reduced demand are also the main factors that have impacted medical services during the epidemic. 76% of the countries in the survey stated that due to reduced demand, epidemic prevention blockades, and economic difficulties, the amount of outpatient services during the epidemic has dropped significantly, and medical services that are not urgently needed are generally cancelled. Other influencing factors include medical staff being transferred to fight. The front line of the epidemic has led to a shortage of manpower, as well as a shortage of medical equipment and supplies.</p>
+  </div>
+
+<div id="vis4"  class="vis-container"></div>
+
+
+<div id="vis5"  class="vis-container"></div>
+<div id="vis6"  class="vis-container"></div>
+
+<footer>
+  copyright: HAONANTAO ID:30507952
+</footer>
+ 
+</div>
+
+
+<script type="text/javascript">
+    var specVis1 = "js/bar chart.vg.json";
+    var specVis2= "js/heatmap.vg.json";
+    var specVis3= "js/map.vg.json";
+    var specVis4= "js/map2.vg.json";
+    var specVis5= "js/scatterplot.vg.json";
+    var specVis6= "js/vacinations line chart.vg.json";
+
+    vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+</body>
+</html>
