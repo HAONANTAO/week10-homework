@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart of median age vs average daily test.",
+  "width": 650,
+  "height": 600,
+  "title": "median age vs daily test comparision",
+  "data": { "url": "https://raw.githubusercontent.com/HAONANTAO/FIT3179-Assignment2/main/data/COVID-19-2.csv"},
+  
+  "selection": {
+    "continent_highlight": {
+    "type": "multi",
+    "fields": ["Continent"],
+    "bind": "legend"
+    }
+    },
+   
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "Median age","type": "quantitative"},
+    "x": {
+      "aggregate": "average", "field": "Daily tests","type": "quantitative",
+      "title": "Daily tests"},
+      "color":{"field":"Continent"},
+    "tooltip":[{"field": "Median age","type": "quantitative"},
+    { "aggregate": "average", "field": "Daily tests","type": "quantitative"}]
+   
+},
+"opacity": {
+  "condition": {"selection": "continent_highlight", "value": 0.6},
+  "value": 0.2
+  }
+}

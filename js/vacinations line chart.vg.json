@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 615,
+  "height": 600,
+  "title": "line chart with different type vacinations",
+  "data": {"url": "https://raw.githubusercontent.com/HAONANTAO/FIT3179-Assignment2/main/data/COVID-19-1.csv"},
+  "selection": {
+    "vaccine_highlight": {
+    "type": "multi",
+    "fields": ["vaccine"],
+    "bind": "legend"
+    }
+    },
+   
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": false,
+      "fill": "white"}
+  },
+  "encoding": {
+    "x": {"timeUnit": "month", "field": "date"},
+    "y": {"aggregate":"average", "field": "total_vaccinations", "type": "quantitative"}, 
+     "tooltip": [
+    {"field": "vaccine", "type": "nominal"},
+    {"aggregate":"average", "field": "total_vaccinations", "type": "quantitative"}
+  ],
+  "opacity": {
+    "condition": {"selection": "vaccine_highlight", "value": 0.6},
+    "value": 0.2
+    },
+    "color": {"field": "vaccine", "type": "nominal"}
+    
+  }
+}

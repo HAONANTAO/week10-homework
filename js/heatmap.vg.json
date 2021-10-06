@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 600,
+  "title": "GDP vs death heat map",
+  "data": {"url": "https://raw.githubusercontent.com/HAONANTAO/FIT3179-Assignment2/main/data/COVID-19-2.csv"},
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Continent", "type": "nominal"},
+    "x": {"field": "GDP/Capita", "type": "quantitative"},
+    "tooltip":{"field": "GDP/Capita", "type": "quantitative","title":"GDP"},
+    "color": {"aggregate": "mean", "field": "Deaths"}
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  }
+}
